@@ -46,13 +46,13 @@
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="LOGIN"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="center_vertical|center"
+                    android:text="REGISTRO"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="30sp" />
             </LinearLayout>
         </LinearLayout>
@@ -68,16 +68,17 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="@color/black"
-                android:hint="Correo electrónico">
+                android:hint="Usuario">
+
 
                 <EditText
-                    android:id="@+id/login_correo"
+                    android:id="@+id/registro_usuario2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/black"
                     android:foregroundTint="@color/black"
 
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
             </android.support.design.widget.TextInputLayout>
@@ -88,17 +89,19 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorPrimary"
                 android:foregroundTint="@color/black"
-                android:hint="Contraseña"
+                android:hint="Correo electrónico"
                 app2:passwordToggleTint="@color/black">
+
+
 
                 <EditText
 
-                    android:id="@+id/login_password"
+                    android:id="@+id/registro_correo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/black"
                     android:foregroundTint="@color/black"
-                    android:inputType="textPassword"
+                    android:inputType="textEmailAddress"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
             </android.support.design.widget.TextInputLayout>
@@ -120,13 +123,50 @@
             android:orientation="vertical">
 
 
-            <CheckBox
-                android:id="@+id/login_ver_password"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/black"
-                android:text="Ver contraseña"
-                android:textColor="@color/black" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/black"
+                android:hint="Contraseña">
+
+                <EditText
+                    android:id="@+id/registro_password_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:foregroundTint="@color/black"
+
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/black"
+                android:hint="Repita contraseña">
+
+                <EditText
+                    android:id="@+id/registro_password_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:foregroundTint="@color/black"
+
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </android.support.design.widget.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -141,34 +181,32 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/login_registrar"
-                    style="@android:style/Widget.Holo.Button"
+                <CheckBox
+                    android:id="@+id/registro_check"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:backgroundTint="#FFCA28"
-                    android:text="REGISTRAR"
-                    android:textColor="@color/black" />
+                    android:layout_weight="6"
+                    android:buttonTint="@color/black"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    android:textColorLink="@android:color/darker_gray" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="6"
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/login_entrar"
-                    style="@android:style/Widget.Holo.Button"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:backgroundTint="#FFCA28"
-                    android:text="ENTRAR"
-                    android:textColor="@color/black" />
+                    android:background="@android:color/transparent"
+                    android:text="He leido y acepto terminos y condiciones de uso"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -179,39 +217,14 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/login_olvido_password"
+                android:id="@+id/registro_registrar"
+                style="@android:style/Widget.Holo.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top|left"
-                android:layout_weight="1"
-                android:allowUndo="true"
-                android:background="@android:color/transparent"
-                android:text="¿Olvidaste tu contrseña?"
-                android:textAlignment="viewStart"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                android:visibility="visible" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/login_faq"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:text="F.A.Q."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                android:visibility="visible" />
+                android:backgroundTint="#FFCA28"
+                android:text="REGISTAR E INGRESAR"
+                android:textColor="@color/black" />
 
         </LinearLayout>
     </LinearLayout>
