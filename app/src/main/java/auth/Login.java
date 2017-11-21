@@ -23,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import principal.MiCuenta;
 import principal.Principal;
 import util.Util;
 
@@ -68,7 +69,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 if(user != null){
                     //SI se ha iniciado sesión
                     Log.i("Sesion","Sesion iniciaciada con email"+user.getEmail());
-                    Intent principal = new Intent(Login.this, Principal.class);
+                    Intent principal = new Intent(Login.this, MiCuenta.class);
                     startActivity(principal);
                     //Aqui podria ir la siguiente activity ya que si el usuario ya esta inciado la sesion se slatria esta parte
                 }else{

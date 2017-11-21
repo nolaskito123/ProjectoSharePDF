@@ -72,7 +72,7 @@
 
 
                 <EditText
-                    android:id="@+id/registro_usuario2"
+                    android:id="@+id/registro_usuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/black"

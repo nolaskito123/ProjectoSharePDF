@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import principal.MiCuenta;
 import principal.Principal;
 
 /**
@@ -96,8 +97,8 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     currentUserDB.child("usuario").setValue(usuario);
                     currentUserDB.child("foto_url").setValue("default");
                     currentUserDB.child("creditos").setValue(6);
-                    Intent principal = new Intent(Registro.this, Principal.class);
-                    startActivity(principal);
+                    Intent cuenta = new Intent(Registro.this, MiCuenta.class);
+                    startActivity(cuenta);
                 }else{
                     Log.i("Sesion",task.getException().getMessage()+"");
                     Toast.makeText(Registro.this, "Autentificación fallida.",
@@ -114,6 +115,8 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.registro_registrar:
+                Intent cuenta = new Intent(Registro.this, MiCuenta.class);
+                startActivity(cuenta);
                 final String correo = registro_correo.getText().toString();
                 final String password_0 = registro_password_0.getText().toString();
                 final String usuario = registro_usuario.getText().toString();

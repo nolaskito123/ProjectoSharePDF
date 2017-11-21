@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -46,7 +47,7 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
     private int CAMERA_REQUEST_CODE = 0;
     private StorageReference mStorage;
     private DatabaseReference mDatabase;
-    Button mi_cuenta_volver, mi_cuenta_cambio_password;
+    Button mi_cuenta_cerrar_sesion, mi_cuenta_comprar_creditos;
     TextView mi_cuenta_usuario, mi_cuenta_frase_del_dia, mi_cuenta_credito_disponible,
             mi_cuenta_archivos_descargados;
     ImageView mi_cuenta_foto;
@@ -63,15 +64,35 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.layout_mi_cuenta);
 
-        mi_cuenta_volver = (Button)findViewById(R.id.mi_cuenta_volver);
-        mi_cuenta_cambio_password = (Button)findViewById(R.id.mi_cuenta_cambio_password);
+        mi_cuenta_cerrar_sesion = (Button) findViewById(R.id.mi_cuenta_cerrar_sesion);
+
         mi_cuenta_usuario = (TextView)findViewById(R.id.mi_cuenta_usuario);
         mi_cuenta_frase_del_dia = (TextView)findViewById(R.id.mi_cuenta_frase_del_dia);
-        mi_cuenta_credito_disponible = (TextView)findViewById(R.id.mi_cuenta_credito_disponible);
-        mi_cuenta_archivos_descargados = (TextView)findViewById(R.id.mi_cuenta_archivos_descargados);
+        mi_cuenta_credito_disponible = (TextView)findViewById(R.id.mi_cuenta_creditos);
+        mi_cuenta_archivos_descargados = (TextView)findViewById(R.id.mi_cuenta_descargados);
         mi_cuenta_foto = (ImageView) findViewById(R.id.mi_cuenta_foto);
 
-        mi_cuenta_volver.setOnClickListener(this);
+        mi_cuenta_cerrar_sesion.setOnClickListener(this);
+        DatabaseReference dbCielo =
+                FirebaseDatabase.getInstance().getReference()
+                        .child("Frases")
+                        .child(numAleatorio());
+
+        dbCielo.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String valor = (String) dataSnapshot.getValue();
+                System.out.println("++++++++"+ valor);
+                mi_cuenta_frase_del_dia.setText(valor);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        System.out.println(dbCielo.getKey()+"-------------------" );
+
         mi_cuenta_foto.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -103,10 +124,36 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
         };
     }
 
+    private String numAleatorio() {
+        int numero = (int) (Math.random() * 5) + 1;
+        return String.valueOf(numero);
+    }
+
 
     public String getRandomString() {
         SecureRandom random = new SecureRandom();
         return new BigInteger(130, random).toString(32);
+    }
+
+
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.mi_cuenta_foto:
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(Intent.createChooser(intent, "Select a picture for your profile"), CAMERA_REQUEST_CODE);
+                }
+                break;
+            case R.id.mi_cuenta_cerrar_sesion:
+                FirebaseAuth.getInstance().signOut();
+                Intent login = new Intent(MiCuenta.this, Login.class);
+                startActivity(login);
+                break;
+        }
     }
 
     @Override
@@ -122,7 +169,7 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
             if (uri == null)
                 return;
             if (mAuth.getCurrentUser() == null)
-            return;
+                return;
 
             if(mStorage==null)
                 mStorage = FirebaseStorage.getInstance().getReference();
@@ -175,25 +222,6 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
             });
         }
 
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.mi_cuenta_volver:
-                Intent principal = new Intent(MiCuenta.this, Principal.class);
-                startActivity(principal);
-                break;
-            case R.id.mi_cuenta_foto:
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivityForResult(Intent.createChooser(intent, "Select a picture for your profile"), CAMERA_REQUEST_CODE);
-                }
-                break;
-
-        }
     }
 
     @Override
