@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.alex.sharepdf.R;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -47,10 +48,10 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
     private int CAMERA_REQUEST_CODE = 0;
     private StorageReference mStorage;
     private DatabaseReference mDatabase;
-    Button mi_cuenta_cerrar_sesion, mi_cuenta_comprar_creditos;
     TextView mi_cuenta_usuario, mi_cuenta_frase_del_dia, mi_cuenta_credito_disponible,
             mi_cuenta_archivos_descargados;
     ImageView mi_cuenta_foto;
+    FloatingActionMenu MenuAccion;
 
 
 
@@ -64,15 +65,15 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.layout_mi_cuenta);
 
-        mi_cuenta_cerrar_sesion = (Button) findViewById(R.id.mi_cuenta_cerrar_sesion);
-
+        MenuAccion = findViewById(R.id.Principal);
+        MenuAccion.setClosedOnTouchOutside(true);
+        MenuAccion.setIconAnimated(false);
         mi_cuenta_usuario = (TextView)findViewById(R.id.mi_cuenta_usuario);
         mi_cuenta_frase_del_dia = (TextView)findViewById(R.id.mi_cuenta_frase_del_dia);
         mi_cuenta_credito_disponible = (TextView)findViewById(R.id.mi_cuenta_creditos);
         mi_cuenta_archivos_descargados = (TextView)findViewById(R.id.mi_cuenta_descargados);
         mi_cuenta_foto = (ImageView) findViewById(R.id.mi_cuenta_foto);
 
-        mi_cuenta_cerrar_sesion.setOnClickListener(this);
         DatabaseReference dbCielo =
                 FirebaseDatabase.getInstance().getReference()
                         .child("Frases")
@@ -134,6 +135,39 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
         SecureRandom random = new SecureRandom();
         return new BigInteger(130, random).toString(32);
     }
+
+
+
+    public void ClickSalir(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent login = new Intent(this, Login.class);
+        startActivity(login);
+    }
+
+    public void ClickComprar(View view){
+        //Intent i = new Intent(this, Subir.class);
+        //startActivity(i);
+    }
+    public void ClickSubir(View view){
+        Intent i = new Intent(this, Subir.class);
+        startActivity(i);
+    }
+
+    public void ClickBusqueda(View view){
+        Intent i = new Intent(this, Busqueda.class);
+        startActivity(i);
+    }
+    public void ClickArchivos(View view){
+        Intent i = new Intent(this, Archivos.class);
+        startActivity(i);
+    }
+    public void ClickAjustes(View view){
+        Intent i = new Intent(this, Ajustes.class);
+        startActivity(i);
+    }
+
+
+
 
 
 

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="principal.Subir">
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/Principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:menu_colorNormal="@color/FondoFAB"
+        app:menu_colorPressed="@color/PresionadoMenu"
+        app:menu_icon="@drawable/ic_add">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/MiCuenta"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickMiCuenta"
+            android:src="@drawable/ic_count"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Cuenta"
+            app:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/Busqueda"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickBusqueda"
+            android:src="@drawable/ic_find"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Busqueda"
+            app:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/Archivos"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickArchivos"
+            android:src="@drawable/ic_file"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Archivos"
+            app:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/Ajustes"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickAjustes"
+            android:src="@drawable/ic_config"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Ajustes"
+            app:fab_size="normal" />
+    </com.github.clans.fab.FloatingActionMenu>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="5">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.6"
+                android:weightSum="5">
+                <Button
+                    android:id="@+id/BotonEscoger"
+                    android:layout_width="20mm"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/FondoFAB"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/ExaminarPDF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:weightSum="5"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.6"
+                android:weightSum="5">
+                <Button
+                    android:id="@+id/BotonSubir"
+                    android:layout_width="15mm"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/FondoFAB"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="25dp"
+                    android:text="@string/Subir" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="50mm"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:weightSum="5">
+
+            <TableLayout
+                android:layout_width="50mm"
+                android:layout_height="73mm"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_weight="0.25">
+
+                    <TextView
+                        android:id="@+id/NombreArchivo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:layout_weight="0.25"
+                        android:text="@string/col1NombrePDF" />
+
+                    <EditText
+                        android:id="@+id/pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:hint="@string/col2NombrePDF"/>
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_weight="0.25">
+
+                    <TextView
+                        android:id="@+id/Categoria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:layout_weight="0.25"
+                        android:text="@string/Categoria" />
+
+                    <Spinner
+                        android:id="@+id/EscogerCategoria"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"/>
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="4"
+                    android:layout_weight="3.5">
+
+                    <TextView
+                        android:id="@+id/Descripcion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:layout_weight="0.25"
+                        android:text="@string/col1Descripcion" />
+
+                    <EditText
+                        android:id="@+id/CampoDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:hint="@string/col2Descripcion"/>
+
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -24,7 +24,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import principal.MiCuenta;
-import principal.Principal;
 import util.Util;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {

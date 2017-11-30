@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="principal.Busqueda">
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/Principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:menu_colorNormal="@color/FondoFAB"
+        app:menu_colorPressed="@color/PresionadoMenu"
+        app:menu_icon="@drawable/ic_add">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/Subir"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickSubir"
+            android:src="@drawable/ic_up"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Subir"
+            app:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/MiCuenta"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickMiCuenta"
+            android:src="@drawable/ic_count"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Cuenta"
+            app:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/Archivos"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickArchivos"
+            android:src="@drawable/ic_file"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Archivos"
+            app:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/Ajustes"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:onClick="ClickAjustes"
+            android:src="@drawable/ic_config"
+            app:fab_colorNormal="@color/FondoFAB"
+            app:fab_colorPressed="@color/PresionadoFAB"
+            app:fab_label="@string/Ajustes"
+            app:fab_size="normal" />
+    </com.github.clans.fab.FloatingActionMenu>
+</android.support.constraint.ConstraintLayout>

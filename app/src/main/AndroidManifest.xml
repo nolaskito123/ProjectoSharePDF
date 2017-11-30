@@ -23,13 +23,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="principal.Principal">
-            <intent-filter>
-                <action android:name="android.intent.action.PRINCIPAL" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name="principal.MiCuenta">
             <intent-filter>
                 <action android:name="android.intent.action.MICUENTA" />
@@ -37,10 +30,35 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Main"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name="principal.Ajustes">
+            <intent-filter>
+                <action android:name="android.intent.action.AJUSTES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="principal.Archivos">
+            <intent-filter>
+                <action android:name="android.intent.action.ARCHIVOS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="principal.Busqueda">
+            <intent-filter>
+                <action android:name="android.intent.action.BUSQUEDA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="principal.Subir">
+            <intent-filter>
+                <action android:name="android.intent.action.SUBIR" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+
     </application>
+
+
 
 </manifest>

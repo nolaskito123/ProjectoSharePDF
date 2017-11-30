@@ -9,4 +9,19 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Activities -->
+    <string name="Ajustes">Ajustes</string>
+    <string name="Archivos">Archivos</string>
+    <string name="Busqueda">Búsqueda</string>
+    <string name="Subir">Subir</string>
+    <string name="Cuenta">Cuenta</string>
+    <string name="Compra">Comprar créditos</string>
+    <string name="Cerrar">Cerrar sesión</string>
+    <!-- Activity Subir -->
+    <string name="ExaminarPDF">Examinar</string>
+    <string name="col1NombrePDF">Nombre de archivo</string>
+    <string name="col2NombrePDF">Nombre archivo</string>
+    <string name="Categoria">Categoría</string>
+    <string name="col1Descripcion">Descripción</string>
+    <string name="col2Descripcion">Describe archivo</string>
 </resources>
