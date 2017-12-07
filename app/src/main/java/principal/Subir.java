@@ -149,7 +149,8 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
 
     public void ActualizarDB(Uri Url){
         String id = mDatabase.push().getKey();
-        PDF pdfsubir = new PDF(Categoria, Descrip.getText().toString(), "gary@hola.com", id, Name.getText().toString()+".pdf", false, Url.toString());
+        PDF pdfsubir = new PDF(Categoria, Descrip.getText().toString(), "gary@hola.com", id,
+                Name.getText().toString()+".pdf", false, Url.toString(), 0, 0);
         mDatabase.child(id).setValue(pdfsubir);
         Name.setText("");
         Descrip.setText("");
