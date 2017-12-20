@@ -1,14 +1,5 @@
 <resources>
     <string name="app_name">sharePDF</string>
-    <string name="title_activity_main">Main</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="tab_text_3">Tab 3</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Activities -->
     <string name="Ajustes">Ajustes</string>
     <string name="Archivos">Archivos</string>
@@ -17,12 +8,75 @@
     <string name="Cuenta">Cuenta</string>
     <string name="Compra">Comprar créditos</string>
     <string name="Cerrar">Cerrar sesión</string>
-    <!-- Activity Subir -->
+    <!-- Activity Subir/Descargar -->
     <string name="ExaminarPDF">Examinar</string>
     <string name="col1NombrePDF">Nombre de archivo</string>
     <string name="col2NombrePDF">Nombre archivo</string>
     <string name="Categoria">Categoría</string>
     <string name="col1Descripcion">Descripción</string>
+    <string name="Puntuacion">Puntuación</string>
     <string name="col2Descripcion">Describe archivo</string>
     <string name="Descargar">Descargar</string>
+    <!-- Activity Ajustes -->
+    <string name="contra">Cambiar contraseña</string>
+    <string name="idioma">Cambiar idioma</string>
+    <!-- Toast -->
+    <string name="Toast1">Selecciona archivo</string>
+    <string name="Toast2">Pon un nombre</string>
+    <string name="Toast3">Pon una descripción</string>
+    <string name="Toast4">Archivo subido con éxito</string>
+    <string name="Toast5">Archivo descargado con éxito</string>
+    <string name="Toast6">Autenticación fallida</string>
+    <string name="Toast7">Acepta las términos y condiciones</string>
+    <string name="Toast8">Ingresa un usuario</string>
+    <string name="Toast9">Contraseña muy corta</string>
+    <string name="Toast10">Las contraseñas no coinciden</string>
+    <string name="Toast11">Usuario no registrado o otro error</string>
+    <!--ProgressDialog/AlertDialog-->
+    <string name="Texto1">Selecciona archivo</string>
+    <string name="Texto2">Subiendo archivo</string>
+    <string name="Texto3">% subido</string>
+    <string name="Texto4">Descargando archivo</string>
+    <string name="Texto5">% descargado</string>
+    <string name="Texto6">Selecciona idioma</string>
+    <!-- Idiomas -->
+    <string name="str_en" translatable="false">English</string>
+    <string name="str_es" translatable="false">Español</string>
+    <string name="str_ca" translatable="false">Català</string>
+    <!-- Spinner -->
+    <string name="Todos">--Todo--</string>
+    <string name="Redes">Redes</string>
+    <string name="Electronica">Electrónica</string>
+    <string name="Programacion">Programación</string>
+    <string name="Matematicas">Matemáticas</string>
+    <string name="Fisica">Física</string>
+    <string name="Quimica">Química</string>
+    <string name="Otros">Otros</string>
+    <!--Para subida-->
+    <string-array name="Selección_Categoria">
+        <item>@string/Redes</item>
+        <item>@string/Electronica</item>
+        <item>@string/Programacion</item>
+        <item>@string/Matematicas</item>
+        <item>@string/Fisica</item>
+        <item>@string/Quimica</item>
+        <item>@string/Otros</item>
+    </string-array>
+    <!--Para descarga-->
+    <string-array name="Spinner_Categoria">
+        <item>@string/Todos</item>
+        <item>@string/Redes</item>
+        <item>@string/Electronica</item>
+        <item>@string/Programacion</item>
+        <item>@string/Matematicas</item>
+        <item>@string/Fisica</item>
+        <item>@string/Quimica</item>
+        <item>@string/Otros</item>
+    </string-array>
+    <string-array name="idiomas" >
+        <item>@string/str_es</item>
+        <item>@string/str_ca</item>
+        <item>@string/str_en</item>
+    </string-array>
+
 </resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">sharePDF</string>
+    <!-- Activities -->
+    <string name="Ajustes">Settings</string>
+    <string name="Archivos">Files</string>
+    <string name="Busqueda">Search</string>
+    <string name="Subir">Up</string>
+    <string name="Cuenta">Count</string>
+    <string name="Compra">Buy credits</string>
+    <string name="Cerrar">Logout</string>
+    <!-- Activity Subir/Descargar -->
+    <string name="ExaminarPDF">Examine</string>
+    <string name="col1NombrePDF">Filename</string>
+    <string name="col2NombrePDF">File name</string>
+    <string name="Categoria">Category</string>
+    <string name="col1Descripcion">Description</string>
+    <string name="col2Descripcion">Describe file</string>
+    <string name="Descargar">Download</string>
+    <!-- Activity Ajustes -->
+    <string name="contra">Change Password</string>
+    <string name="idioma">Change language</string>
+    <!-- Toast -->
+    <string name="Toast1">Select file</string>
+    <string name="Toast2">Enter a name</string>
+    <string name="Toast3">Enter a description</string>
+    <string name="Toast4">File uploaded successfully</string>
+    <string name="Toast5">File downloaded successfully</string>
+    <string name="Toast6">Failed authentication</string>
+    <string name="Toast7">Accept the terms and conditions</string>
+    <string name="Toast8">Enter a user</string>
+    <string name="Toast9">Password too short</string>
+    <string name="Toast10">Passwords do not match</string>
+    <string name="Toast11">Unregistered user or other error</string>
+    <!--ProgressDialog/AlertDialog-->
+    <string name="Texto1">Select file</string>
+    <string name="Texto2">Uploading file</string>
+    <string name="Texto3">% uploaded</string>
+    <string name="Texto4">Downloading file</string>
+    <string name="Texto5">% downloaded</string>
+    <string name="Texto6">Select language</string>
+    <!-- Idiomas -->
+    <string name="str_en" translatable="false">English</string>
+    <string name="str_es" translatable="false">Español</string>
+    <string name="str_ca" translatable="false">Català</string>
+    <string-array name="idiomas" >
+        <item>@string/str_es</item>
+        <item>@string/str_ca</item>
+        <item>@string/str_en</item>
+    </string-array>
+    <string name="Todos">--All--</string>
+    <string name="Redes">Networks</string>
+    <string name="Matematicas">Maths</string>
+    <string name="Fisica">Physical</string>
+    <string name="Quimica">Chemist</string>
+    <string name="Otros">Another</string>
+    <string name="Electronica">Electronics</string>
+    <string name="Programacion">Programmming</string>
+    <string name="Puntuacion">Score</string>
+</resources>

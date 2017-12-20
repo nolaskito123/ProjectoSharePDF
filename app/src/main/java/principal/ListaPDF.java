@@ -40,9 +40,9 @@ public class ListaPDF  extends ArrayAdapter<PDF>{
 
         PDF pdf = listaPDF.get(position);
 
-        archivo_nombre.setText(pdf.getNombre());
-        archivo_categoria.setText(pdf.getCategoría());
-        archivo_val.setText(pdf.getEmail());
+        archivo_nombre.setText(pdf.getTitulo());
+        archivo_categoria.setText(pdf.getCategoria());
+        archivo_val.setText(""+pdf.getPuntuacion());
 
         return listViewItem;
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">sharePDF</string>
+    <!-- Activities -->
+    <string name="Ajustes">Ajustaments</string>
+    <string name="Archivos">Archius</string>
+    <string name="Busqueda">Cerca</string>
+    <string name="Subir">Pujar</string>
+    <string name="Cuenta">Compte</string>
+    <string name="Compra">Comprar crèdits</string>
+    <string name="Cerrar">Tancar sessió</string>
+    <!-- Activity Subir/Descargar -->
+    <string name="ExaminarPDF">Navega</string>
+    <string name="col1NombrePDF">Nom de archiu</string>
+    <string name="col2NombrePDF">Nom archiu</string>
+    <string name="Categoria">Categoria</string>
+    <string name="col1Descripcion">Descripció</string>
+    <string name="col2Descripcion">Descriure archiu</string>
+    <string name="Descargar">Descarregar</string>
+    <!-- Activity Ajustes -->
+    <string name="contra">Canviar contrasenya</string>
+    <string name="idioma">Canviar idioma</string>
+    <!-- Toast -->
+    <string name="Toast1">Seleccioneu archiu</string>
+    <string name="Toast2">Possa un nom</string>
+    <string name="Toast3">Possa una descripció</string>
+    <string name="Toast4">Archiu pujat amb èxit</string>
+    <string name="Toast5">Archiu descarregat amb èxit</string>
+    <string name="Toast6">Autenticació fallida</string>
+    <string name="Toast7">Accepta les termes i condicions</string>
+    <string name="Toast8">Ingressa un usuari</string>
+    <string name="Toast9">Constrasenya molt curta</string>
+    <string name="Toast10">Les contrasenyes no coincideixen</string>
+    <string name="Toast11">Usuari no registrat o altre error</string>
+    <!--ProgressDialog/AlertDialog-->
+    <string name="Texto1">Seleccioneu archiu</string>
+    <string name="Texto2">Pujant archiu</string>
+    <string name="Texto3">% pujat</string>
+    <string name="Texto4">Descarregant archiu</string>
+    <string name="Texto5">% descarregat</string>
+    <string name="Texto6">Seleccioneu idioma</string>
+    <!-- Idiomas -->
+    <string name="str_en" translatable="false">English</string>
+    <string name="str_es" translatable="false">Español</string>
+    <string name="str_ca" translatable="false">Català</string>
+    <string-array name="idiomas" >
+        <item>@string/str_es</item>
+        <item>@string/str_ca</item>
+        <item>@string/str_en</item>
+    </string-array>
+    <string name="Todos">--Tot--</string>
+    <string name="Redes">Xarxes</string>
+    <string name="Electronica">Electrònica</string>
+    <string name="Programacion">Programació</string>
+    <string name="Matematicas">Matemàtiques</string>
+    <string name="Fisica">Física</string>
+    <string name="Quimica">Química</string>
+    <string name="Otros">Altres</string>
+    <string name="Puntuacion">Puntuació</string>
+
+</resources>

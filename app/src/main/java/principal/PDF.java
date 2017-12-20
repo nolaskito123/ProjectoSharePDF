@@ -5,28 +5,31 @@ package principal;
  */
 
 public class PDF {
-    private String categoría, descripcion, email, id, nombre, url;
-    private boolean revisado;
-    private float valoracion;
-    private int descargas;
-    public PDF(){
+    private String fecha, categoria, descripcion, email, idUsuario;
+    private int puntuacion;
+    private String titulo, url;
+
+    public PDF() {
+
     }
 
-    public PDF(String categoría, String descripcion, String email, String id, String nombre,
-               boolean revisado, String url, float valoracion, int descargas  ) {
-        this.categoría = categoría;
+    public PDF(String fecha, String categoria, String descripcion, String email, String idUsuario, int puntuacion, String titulo, String url) {
+        this.fecha = fecha;
+        this.categoria = categoria;
         this.descripcion = descripcion;
         this.email = email;
-        this.id = id;
-        this.nombre = nombre;
-        this.revisado = revisado;
+        this.idUsuario = idUsuario;
+        this.puntuacion = puntuacion;
+        this.titulo = titulo;
         this.url = url;
-        this.valoracion = valoracion;
-        this.descargas = descargas;
     }
 
-    public String getCategoría() {
-        return categoría;
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getCategoria() {
+        return categoria;
     }
 
     public String getDescripcion() {
@@ -37,27 +40,20 @@ public class PDF {
         return email;
     }
 
-    public String getId() {
-        return id;
+    public String getIdUsuario() {
+        return idUsuario;
     }
 
-    public String getNombre() {
-        return nombre;
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public boolean isRevisado() {
-        return revisado;
-    }
-
-    public float getValoracion() {
-        return valoracion;
-    }
-
-    public int getDescargas() {
-        return descargas;
-    }
 }

@@ -20,12 +20,16 @@ import com.example.alex.sharepdf.R;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.util.Calendar;
 
 /**
  * Created by gtc5 on 29/11/2017.
@@ -35,7 +39,7 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
     FloatingActionMenu MenuAccion;
     EditText Name, Descrip;
     Spinner ListaItems;
-    final String[] Items = {"Redes", "Electrónica", "Programación", "Matemáticas", "Física", "Química", "Otros"};
+    String[] Items;
     private Button BotonEscoger, BotonSubir;
     final static int PICK_PDF_CODE = 2342;
     private String rutaString="";
@@ -43,7 +47,8 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
     private String Categoria;
     private StorageReference sr;
     private DatabaseReference mDatabase;
-
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    Calendar c = Calendar.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,16 +65,41 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
         BotonEscoger = (Button) findViewById(R.id.BotonEscoger);
         BotonSubir = (Button) findViewById(R.id.BotonSubir);
         ListaItems = (Spinner) findViewById(R.id.EscogerCategoria);
+        Items = getResources().getStringArray(R.array.Selección_Categoria);
         BotonEscoger.setOnClickListener(this);
         BotonSubir.setOnClickListener(this);
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Items);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Items);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ListaItems.setAdapter(adapter);
         ListaItems.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
                 // TODO Auto-generated method stub
-                Categoria =Items[position];
+                switch(position){
+                    case 0:
+                        Categoria="Redes";
+                        break;
+                    case 1:
+                        Categoria="Electrónica";
+                        break;
+                    case 2:
+                        Categoria="Programación";
+                        break;
+                    case 3:
+                        Categoria="Matemáticas";
+                        break;
+                    case 4:
+                        Categoria="Física";
+                        break;
+                    case 5:
+                        Categoria="Química";
+                        break;
+                    case 6:
+                        Categoria="Otros";
+                        break;
+                }
+
             }
 
             @Override
@@ -90,11 +120,11 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
             if(rutaString.length()!=0 && !Name.getText().toString().isEmpty() && !Descrip.getText().toString().isEmpty() ){
                 SubirArchivo(rutaUri);
             } else if(rutaString.length()==0){
-                Toast.makeText(this, "Selecciona archivo",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.Toast1),Toast.LENGTH_SHORT).show();
             }else if(Name.getText().toString().isEmpty()){
-                Toast.makeText(this, "Pon nombre al archivo",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.Toast2),Toast.LENGTH_SHORT).show();
             }else {
-                Toast.makeText(this, "Pon una descripción",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,getResources().getString(R.string.Toast3),Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -103,7 +133,7 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
         Intent intent = new Intent();
         intent.setType("application/pdf");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Selecciona archivo"), PICK_PDF_CODE);
+        startActivityForResult(Intent.createChooser(intent, getResources().getString(R.string.Texto1)), PICK_PDF_CODE);
     }
 
     @Override
@@ -118,7 +148,7 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
 
     private void SubirArchivo(Uri data){
         final ProgressDialog pd = new ProgressDialog(this);
-        pd.setTitle("Subiendo Archivo");
+        pd.setTitle(getResources().getString(R.string.Texto2));
         pd.show();
         StorageReference riversRef = sr.child(Categoria +"/"+Name.getText().toString()+".pdf");
         riversRef.putFile(data)
@@ -129,7 +159,7 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
                         Uri p =taskSnapshot.getDownloadUrl();
                         ActualizarDB(p);
                         pd.dismiss();
-                        Toast.makeText(getApplicationContext(), "Archivo subido con éxito",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.Toast4),Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -142,15 +172,14 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
                     @Override
                     public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                         double porcentaje = (100.0*taskSnapshot.getBytesTransferred())/taskSnapshot.getTotalByteCount();
-                        pd.setMessage(((int)porcentaje)+ "%  Subido");
+                        pd.setMessage(((int)porcentaje)+ getResources().getString(R.string.Texto3));
                     }
                 });
     }
 
     public void ActualizarDB(Uri Url){
         String id = mDatabase.push().getKey();
-        PDF pdfsubir = new PDF(Categoria, Descrip.getText().toString(), "gary@hola.com", id,
-                Name.getText().toString()+".pdf", false, Url.toString(), 0, 0);
+        PDF pdfsubir = new PDF(c.get(Calendar.DATE)+"/"+c.get(Calendar.MONTH)+"/"+c.get(Calendar.YEAR), Categoria, Descrip.getText().toString(), user.getEmail(), user.getUid(),0, Name.getText().toString()+".pdf", Url.toString());
         mDatabase.child(id).setValue(pdfsubir);
         Name.setText("");
         Descrip.setText("");

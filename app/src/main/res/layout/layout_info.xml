@@ -23,12 +23,22 @@
         android:text="@string/Categoria" />
 
     <TextView
-        android:id="@+id/CampoDescripcion"
+        android:id="@+id/CampoPuntuacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/CampoCategoria"
         android:layout_alignStart="@+id/CampoCategoria"
         android:layout_below="@+id/CampoCategoria"
+        android:layout_marginTop="40dp"
+        android:text="@string/Puntuacion" />
+
+    <TextView
+        android:id="@+id/CampoDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/CampoPuntuacion"
+        android:layout_alignStart="@+id/CampoPuntuacion"
+        android:layout_below="@+id/CampoPuntuacion"
         android:layout_marginTop="40dp"
         android:text="@string/col1Descripcion" />
 
@@ -50,6 +60,15 @@
         android:layout_alignLeft="@+id/PonerNombre"
         android:layout_alignStart="@+id/PonerNombre"
         android:layout_alignTop="@+id/CampoCategoria"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/PonerPuntuacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/PonerCategoria"
+        android:layout_alignStart="@+id/PonerCategoria"
+        android:layout_alignTop="@+id/CampoPuntuacion"
         android:text="TextView" />
 
     <TextView
