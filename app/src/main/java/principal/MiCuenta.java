@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,9 +50,10 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
     private StorageReference mStorage;
     private DatabaseReference mDatabase;
     TextView mi_cuenta_usuario, mi_cuenta_frase_del_dia, mi_cuenta_credito_disponible,
-            mi_cuenta_archivos_descargados;
+            mi_cuenta_archivos_descargados,mi_cuenta_archivos_subidos, mi_cuenta_verificacion_email;
     ImageView mi_cuenta_foto;
     FloatingActionMenu MenuAccion;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 
 
@@ -72,6 +74,8 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
         mi_cuenta_frase_del_dia = (TextView)findViewById(R.id.mi_cuenta_frase_del_dia);
         mi_cuenta_credito_disponible = (TextView)findViewById(R.id.mi_cuenta_creditos);
         mi_cuenta_archivos_descargados = (TextView)findViewById(R.id.mi_cuenta_descargados);
+        mi_cuenta_archivos_subidos = (TextView)findViewById(R.id.mi_cuenta_subidos);
+        mi_cuenta_verificacion_email = (TextView)findViewById(R.id.mi_cuenta_verificacion);
         mi_cuenta_foto = (ImageView) findViewById(R.id.mi_cuenta_foto);
 
         DatabaseReference dbCielo =
@@ -106,6 +110,14 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             mi_cuenta_usuario.setText(String.valueOf(dataSnapshot.child("usuario").getValue().toString()));
+                            mi_cuenta_credito_disponible.setText(String.valueOf(dataSnapshot.child("creditos").getValue().toString()));
+                            mi_cuenta_archivos_descargados.setText(String.valueOf(dataSnapshot.child("archivos_descargados").getValue().toString()));
+                            mi_cuenta_archivos_subidos.setText(String.valueOf(dataSnapshot.child("archivos_subidos").getValue().toString()));
+                            if(user.isEmailVerified()){
+                                mi_cuenta_verificacion_email.setText("Email verificado :)");
+                            }else {
+                                mi_cuenta_verificacion_email.setText("Tienes que verificar tu email :(");
+                            }
                             String imageUrl = String.valueOf(dataSnapshot.child("foto_url").getValue().toString());
                             if (URLUtil.isValidUrl(imageUrl))
                                 Picasso.with(MiCuenta.this).load(Uri.parse(imageUrl)).into(mi_cuenta_foto);
@@ -144,10 +156,7 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
         startActivity(login);
     }
 
-    public void ClickComprar(View view){
-        //Intent i = new Intent(this, Subir.class);
-        //startActivity(i);
-    }
+
     public void ClickSubir(View view){
         Intent i = new Intent(this, Subir.class);
         startActivity(i);
@@ -157,10 +166,7 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
         Intent i = new Intent(this, Busqueda.class);
         startActivity(i);
     }
-    public void ClickArchivos(View view){
-        Intent i = new Intent(this, Archivos.class);
-        startActivity(i);
-    }
+
     public void ClickAjustes(View view){
         Intent i = new Intent(this, Ajustes.class);
         startActivity(i);
@@ -182,11 +188,7 @@ public class MiCuenta  extends AppCompatActivity implements View.OnClickListener
                     startActivityForResult(Intent.createChooser(intent, "Select a picture for your profile"), CAMERA_REQUEST_CODE);
                 }
                 break;
-            case R.id.mi_cuenta_cerrar_sesion:
-                FirebaseAuth.getInstance().signOut();
-                Intent login = new Intent(MiCuenta.this, Login.class);
-                startActivity(login);
-                break;
+
         }
     }
 

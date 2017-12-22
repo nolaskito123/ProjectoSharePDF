@@ -111,10 +111,12 @@ public class Busqueda extends AppCompatActivity {
                 Intent i = new Intent(Busqueda.this, Info.class);
                 i.putExtra("Nombre", seleccionado.getTitulo());
                 i.putExtra("Categoria", seleccionado.getCategoria());
+                i.putExtra("Fecha", seleccionado.getFechaPublicacion());
                 i.putExtra("Puntuacion", seleccionado.getPuntuacion());
                 i.putExtra("Descripcion", seleccionado.getDescripcion());
                 i.putExtra("Url", seleccionado.getUrl());
                 startActivity(i);
+                finish();
                 // assuming string and if you want to get the value on click of list item
                 // do what you intend to do on click of listview row
             }
@@ -180,10 +182,7 @@ public class Busqueda extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void ClickArchivos(View view) {
-        Intent i = new Intent(this, Archivos.class);
-        startActivity(i);
-    }
+
 
     public void ClickAjustes(View view) {
         Intent i = new Intent(this, Ajustes.class);

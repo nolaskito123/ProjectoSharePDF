@@ -24,11 +24,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import principal.MiCuenta;
+import principal.ResetPasswordActivity;
 import util.Util;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
-    Button login_registrar, login_entrar;
+    Button login_registrar, login_entrar, login_olvidaste_password;
     EditText login_password, login_correo;
     CheckBox login_ver_password;
     FirebaseAuth.AuthStateListener mAuthListener;
@@ -45,6 +46,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         login_entrar = (Button) findViewById(R.id.login_entrar);
         login_correo = (EditText) findViewById(R.id.login_correo);
         login_password = (EditText)findViewById(R.id.login_password);
+        login_olvidaste_password = (Button)findViewById(R.id.login_olvido_password);
         login_ver_password = (CheckBox)findViewById(R.id.login_ver_password);
         mAuth = FirebaseAuth.getInstance();
         login_ver_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -127,6 +129,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.login_registrar:
                 Intent registro = new Intent(Login.this, Registro.class);
                 startActivity(registro);
+                break;
+            case R.id.login_olvido_password:
+                Intent olvido_password = new Intent(Login.this, ResetPasswordActivity.class);
+                startActivity(olvido_password);
                 break;
 
         }

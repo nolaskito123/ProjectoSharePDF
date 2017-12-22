@@ -5,7 +5,7 @@ package principal;
  */
 
 public class PDF {
-    private String fecha, categoria, descripcion, email, idUsuario;
+    private String fechaPublicacion, categoria, descripcion, email, idUsuario;
     private int puntuacion;
     private String titulo, url;
 
@@ -13,8 +13,8 @@ public class PDF {
 
     }
 
-    public PDF(String fecha, String categoria, String descripcion, String email, String idUsuario, int puntuacion, String titulo, String url) {
-        this.fecha = fecha;
+    public PDF(String fechaPublicacion, String categoria, String descripcion, String email, String idUsuario, int puntuacion, String titulo, String url) {
+        this.fechaPublicacion = fechaPublicacion;
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.email = email;
@@ -24,8 +24,8 @@ public class PDF {
         this.url = url;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getFechaPublicacion() {
+        return fechaPublicacion;
     }
 
     public String getCategoria() {

@@ -96,6 +96,12 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     currentUserDB.child("usuario").setValue(usuario);
                     currentUserDB.child("foto_url").setValue("default");
                     currentUserDB.child("creditos").setValue(6);
+                    currentUserDB.child("archivos_subidos").setValue(0);
+                    currentUserDB.child("archivos_descargados").setValue(0);
+                   FirebaseUser user = mAuth.getCurrentUser();
+                   user.sendEmailVerification();
+                    Toast.makeText(Registro.this, "Verifica tu correo antes de 3 días",
+                            Toast.LENGTH_SHORT).show();
                     Intent cuenta = new Intent(Registro.this, MiCuenta.class);
                     startActivity(cuenta);
                 }else{

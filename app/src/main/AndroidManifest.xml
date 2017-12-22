@@ -36,12 +36,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="principal.Archivos">
-            <intent-filter>
-                <action android:name="android.intent.action.ARCHIVOS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name="principal.Busqueda">
             <intent-filter>
                 <action android:name="android.intent.action.BUSQUEDA" />

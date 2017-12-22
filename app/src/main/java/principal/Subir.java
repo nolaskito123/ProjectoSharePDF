@@ -194,10 +194,7 @@ public class Subir extends AppCompatActivity implements View.OnClickListener{
         Intent i = new Intent(this, Busqueda.class);
         startActivity(i);
     }
-    public void ClickArchivos(View view){
-        Intent i = new Intent(this, Archivos.class);
-        startActivity(i);
-    }
+
     public void ClickAjustes(View view){
         Intent i = new Intent(this, Ajustes.class);
         startActivity(i);

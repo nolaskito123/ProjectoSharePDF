@@ -17,6 +17,7 @@
     <string name="Puntuacion">Puntuación</string>
     <string name="col2Descripcion">Describe archivo</string>
     <string name="Descargar">Descargar</string>
+    <string name="Fecha">Fecha de subida </string>
     <!-- Activity Ajustes -->
     <string name="contra">Cambiar contraseña</string>
     <string name="idioma">Cambiar idioma</string>
@@ -32,6 +33,7 @@
     <string name="Toast9">Contraseña muy corta</string>
     <string name="Toast10">Las contraseñas no coinciden</string>
     <string name="Toast11">Usuario no registrado o otro error</string>
+    <string name="Toast12">No tienes suficientes créditos</string>
     <!--ProgressDialog/AlertDialog-->
     <string name="Texto1">Selecciona archivo</string>
     <string name="Texto2">Subiendo archivo</string>

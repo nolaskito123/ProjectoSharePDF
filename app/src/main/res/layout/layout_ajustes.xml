@@ -73,16 +73,7 @@
             app:fab_label="@string/Busqueda"
             app:fab_size="normal" />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/Archivos"
-            android:layout_width="5dp"
-            android:layout_height="5dp"
-            android:onClick="ClickArchivos"
-            android:src="@drawable/ic_file"
-            app:fab_colorNormal="@color/FondoFAB"
-            app:fab_colorPressed="@color/PresionadoFAB"
-            app:fab_label="@string/Archivos"
-            app:fab_size="normal" />
+
     </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.constraint.ConstraintLayout>

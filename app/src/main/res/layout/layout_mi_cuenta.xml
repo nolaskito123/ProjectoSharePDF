@@ -26,16 +26,7 @@
             app:fab_label="@string/Cerrar"
             app:fab_size="normal" />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/Comprar"
-            android:layout_width="5dp"
-            android:layout_height="5dp"
-            android:onClick="ClickComprar"
-            android:src="@drawable/ic_buy"
-            app:fab_colorNormal="@color/FondoFAB"
-            app:fab_colorPressed="@color/PresionadoFAB"
-            app:fab_label="@string/Compra"
-            app:fab_size="normal" />
+
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/Subir"
@@ -59,16 +50,7 @@
             app:fab_label="@string/Busqueda"
             app:fab_size="normal" />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/Archivos"
-            android:layout_width="5dp"
-            android:layout_height="5dp"
-            android:onClick="ClickArchivos"
-            android:src="@drawable/ic_file"
-            app:fab_colorNormal="@color/FondoFAB"
-            app:fab_colorPressed="@color/PresionadoFAB"
-            app:fab_label="@string/Archivos"
-            app:fab_size="normal" />
+
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/Ajustes"
@@ -148,7 +130,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:weightSum="2">
+            android:weightSum="3">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -164,6 +146,13 @@
                     android:orientation="vertical"
                     android:weightSum="1">
 
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Créditos"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -173,6 +162,12 @@
                     android:orientation="vertical"
                     android:weightSum="1">
 
+                    <TextView
+                        android:id="@+id/mi_cuenta_creditos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAlignment="center" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -180,10 +175,80 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="1">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Archivos Descargados"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/mi_cuenta_descargados"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+                </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/jk"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Archivos Subidos"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/mi_cuenta_subidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -207,6 +272,12 @@
                     android:orientation="vertical"
                     android:weightSum="1">
 
+                    <TextView
+                        android:id="@+id/mi_cuenta_verificacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
