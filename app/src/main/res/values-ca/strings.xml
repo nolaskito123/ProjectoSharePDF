@@ -18,7 +18,6 @@
     <string name="col2Descripcion">Descriure archiu</string>
     <string name="Descargar">Descarregar</string>
     <!-- Activity Ajustes -->
-    <string name="contra">Canviar contrasenya</string>
     <string name="idioma">Canviar idioma</string>
     <!-- Toast -->
     <string name="Toast1">Seleccioneu archiu</string>
@@ -57,5 +56,51 @@
     <string name="Quimica">Química</string>
     <string name="Otros">Altres</string>
     <string name="Puntuacion">Puntuació</string>
+    <string name="Correo">Correu electrònic</string>
+    <string name="Contra">Contrasenya</string>
+    <string name="Ver">Veure contrasenya</string>
+    <string name="Registrar">REGISTRE</string>
+    <string name="Entrar">ENTRAR</string>
+    <string name="Olvido">He oblidat la contrasenya?</string>
+    <string name="Registro">REGISTRE</string>
+    <string name="Usuario">Usuari</string>
+    <string name="Repetir">Repeteixi contrasenya</string>
+    <string name="Politicas">He llegit i accepto els termes i condicions d\'ús</string>
+    <string name="Ingresar">REGISTRAR I ENTRAR</string>
+    <string name="Pregunta">Segur que heu oblidat la contrasenya?</string>
+    <string name="Envio">Segur que heu oblidat la contrasenya?</string>
+    <string name="Introduce">Introdueix el teu email aquí</string>
+    <string name="Restablecer">Restablir contrasenya</string>
+    <string name="Creditos">Crèdits</string>
+    <string name="Descargados">Arxius descarregats</string>
+    <string name="Subidos">Arxius pujats</string>
+    <string name="Ruta">Ruta per descàrregues</string>
+    <string name="Verificacion1">Ha verificat</string>
+    <string name="Verificacion2">Si us plau, Comproveu el compte i reiniciar la sessió</string>
+    <string name="Fecha">Data de pujada</string>
+    <string name="Acerca">Sobre nosaltres</string>
+    <string name="Escribir">Escriu-nos:</string>
+    <string name="Enviar">Enviar</string>
+    <string name="Toast12">No teniu prou crèdits</string>
+    <string name="Toast13">Verificare el teu correu</string>
+    <string name="Toast14">L\'autenticació ha fallat</string>
+    <string name="Toast15">Accepteu els termes i condicions</string>
+    <string name="Toast16">Entrar un usuari</string>
+    <string name="Toast17">Format de correu electrònic no és vàlid</string>
+    <string name="Toast18">La contrasenya ha de tenir com a mínim 6 caràcters i una lletra, una lletra minúscula i un nombre</string>
+    <string name="Toast19">Les contrasenyes no coincideixen</string>
+    <string name="Toast20">Introdueix el teu email</string>
+    <string name="Toast21">Revisa el teu correu per restablir contrasenya</string>
+    <string name="Toast22">Fracàs d\'enviar el missatge de correu electrònic</string>
+    <string name="Toast23">No hi ha cap usuari amb l\'e-mail:</string>
+    <string name="Toast24">No hi ha cap usuari amb l\'e-mail:</string>
+    <string name="Toast25">S\'ha produït un error inesperat</string>
+    <string name="Toast26">Contrasenya no és vàlida</string>
+    <string name="Toast27">Correu no vàlid</string>
+    <string name="Toast28">Haureu de verificar el teu compte per descarregar</string>
+    <string name="Toast29">Imatge esborrat correctament</string>
+    <string name="Toast30">No ha pogut suprimir la imatge</string>
+    <string name="Toast31">Foto actualitzada</string>
+    <string name="Toast32">Error al actualitzar foto</string>
 
 </resources>

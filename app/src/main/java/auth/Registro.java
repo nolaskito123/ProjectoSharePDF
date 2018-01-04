@@ -1,6 +1,10 @@
 package auth;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.alex.sharepdf.R;
@@ -26,18 +31,21 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import principal.MiCuenta;
 
-/**
- * Created by Alex on 12/11/2017.
- */
 
+/**
+ * Created by SharePDF developers
+ *
+ * Registro es una clase donde los nuevos usuarios se dan de alta en sharePDF
+ */
 public class Registro extends AppCompatActivity implements View.OnClickListener {
-    private boolean acpeta_politicas;
+    private boolean aceptaPolitica;
     Button registro_registrar;
     EditText registro_correo, registro_usuario, registro_password_0, registro_password_1;
     CheckBox registro_check;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-
+    Dialog myDialog;
+MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +61,15 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         registro_password_0 = (EditText) findViewById(R.id.registro_password_0);
         registro_password_1 = (EditText)findViewById(R.id.registro_password_1);
         registro_check = (CheckBox)findViewById(R.id.registro_check);
+        mp = MediaPlayer.create(this, R.raw.click);
+
         registro_check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(!b){
-                    acpeta_politicas = false;
+                    aceptaPolitica = false;
                 }else{
-                    acpeta_politicas = true;
+                    aceptaPolitica = true;
                 }
             }
         });
@@ -79,15 +89,43 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 }
             }
         };
+        myDialog = new Dialog(this);
     }
 
+    /**
+     * Método utilizado para mostrar políticas.
+     * @param v : parámetro para mostrar la ventana de políticas.
+     */
+    public void ShowPopup(View v) {
+        TextView txtclose;
+
+        myDialog.setContentView(R.layout.custompopup);
+        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        txtclose.setText("X");
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
+
+    /**
+     * Método utilizado para dar de alta a un nuevo usuario.
+     * @param correo : podrá acceder a nuestra app con el correo.
+     * @param password : contraseña asociada al correo anterior.
+     * @param usuario : nombre del usuario para usarlo en la aplicación.
+     */
     private void registrar(final String correo, final String password, final String usuario){
         mAuth.createUserWithEmailAndPassword(correo, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    mAuth.signInWithEmailAndPassword(correo, password);
+
                     //Si la operación a sido correcta osea si se ha creado el usuario
                     Log.i("Sesion","Usuario creado correctamente");
 
@@ -98,17 +136,15 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     currentUserDB.child("creditos").setValue(6);
                     currentUserDB.child("archivos_subidos").setValue(0);
                     currentUserDB.child("archivos_descargados").setValue(0);
-                   FirebaseUser user = mAuth.getCurrentUser();
-                   user.sendEmailVerification();
-                    Toast.makeText(Registro.this, "Verifica tu correo antes de 3 días",
-                            Toast.LENGTH_SHORT).show();
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    user.sendEmailVerification();
+                    Toast.makeText(Registro.this, getResources().getString(R.string.Toast13), Toast.LENGTH_SHORT).show();
                     Intent cuenta = new Intent(Registro.this, MiCuenta.class);
                     startActivity(cuenta);
-                }else{
-                    Log.i("Sesion",task.getException().getMessage()+"");
-                    Toast.makeText(Registro.this, "Autentificación fallida.",
-                            Toast.LENGTH_SHORT).show();
-
+                    finish();
+                } else {
+                    Log.i("Sesion", task.getException().getMessage() + "");
+                    Toast.makeText(Registro.this, getResources().getString(R.string.Toast14), Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -120,16 +156,14 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.registro_registrar:
-                Intent cuenta = new Intent(Registro.this, MiCuenta.class);
-                startActivity(cuenta);
+                mp.start();
                 final String correo = registro_correo.getText().toString();
                 final String password_0 = registro_password_0.getText().toString();
                 final String usuario = registro_usuario.getText().toString();
                 final String password_1 = registro_password_1.getText().toString();
                 if(completa_registro(usuario,password_0,password_1,correo)) {
-                    if(!acpeta_politicas) {
-                        Toast.makeText(getApplicationContext(),"Acepta las términos y condiciones",Toast.LENGTH_SHORT).show();
-
+                    if(!aceptaPolitica) {
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.Toast15), Toast.LENGTH_SHORT).show();
                     }else {
                         registrar(correo, password_0, usuario);
                     }
@@ -151,29 +185,42 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         mAuth.removeAuthStateListener(mAuthListener);
     }
 
-
+    /**
+     * Método para la verificación del usuario, antes de darlo de alta en nuestra base de datos.
+     * @param usuario : Que no sea un usuario nulo.
+     * @param password_0 : mínimo 6 carácteres, una mayúscula y un número, para ser dada como
+     *                   contraseña válida.
+     * @param password_1 : se verifica que coincida con la contraseña dada anterorimente.
+     * @param correo : se verifica si el correo tiene el formato correcto.
+     * @return : si se cumple con los requisitos básicos se devuelto un true, en caso contrario un false.
+     */
     private boolean completa_registro(String usuario, String password_0, String password_1,String correo){
-        if(TextUtils.isEmpty(usuario)){
-            Toast.makeText(getApplicationContext(),"Ingresa un usuario",Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(usuario)) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.Toast16), Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!util.Util.isValidEmail(correo)){
-            Toast.makeText(getApplicationContext(),"formato de correo no válido",Toast.LENGTH_SHORT).show();
+        if (!util.Util.isValidEmail(correo)) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.Toast17), Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!util.Util.isValidPassword(password_0)){
-            Toast.makeText(getApplicationContext(),"Recuerda que la contraseña debe" +
-                    " tener una mayúscula, una minúscula y un número, como mínimo 6 carácteres",Toast.LENGTH_SHORT).show();
+        if (!util.Util.isValidPassword(password_0)) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.Toast18), Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!password_0.equals(password_1)){
-            Toast.makeText(getApplicationContext(),"contraseñas no coinciden",Toast.LENGTH_SHORT).show();
+        if (!password_0.equals(password_1)) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.Toast19), Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(Registro.this, Login.class);
+        startActivity(i);
+        this.finish();
+    }
 
 }

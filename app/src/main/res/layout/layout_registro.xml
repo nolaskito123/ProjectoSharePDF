@@ -50,7 +50,7 @@
                     android:layout_gravity="center_vertical|center"
                     android:foregroundGravity="center_vertical"
                     android:gravity="center_vertical|center"
-                    android:text="REGISTRO"
+                    android:text="@string/Registro"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="30sp" />
@@ -68,7 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="@color/black"
-                android:hint="Usuario">
+                android:hint="@string/Usuario">
 
 
                 <EditText
@@ -89,13 +89,10 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorPrimary"
                 android:foregroundTint="@color/black"
-                android:hint="Correo electrónico"
+                android:hint="@string/Correo"
                 app2:passwordToggleTint="@color/black">
 
-
-
                 <EditText
-
                     android:id="@+id/registro_correo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -128,7 +125,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="@color/black"
-                android:hint="Contraseña">
+                android:hint="@string/Contra">
 
                 <EditText
                     android:id="@+id/registro_password_0"
@@ -154,7 +151,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="@color/black"
-                android:hint="Repita contraseña">
+                android:hint="@string/Repetir">
 
                 <EditText
                     android:id="@+id/registro_password_1"
@@ -203,8 +200,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:text="He leido y acepto terminos y condiciones de uso"
-                    android:textAlignment="viewStart"
+                    android:text="@string/Politicas"
+                    android:onClick="ShowPopup"
                     android:textColor="@color/black"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -222,8 +219,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#FFCA28"
-                android:text="REGISTAR E INGRESAR"
+                android:backgroundTint="@color/FondoFAB"
+                android:text="@string/Ingresar"
                 android:textColor="@color/black" />
 
         </LinearLayout>

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context="principal.MiCuenta">
+
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/Principal"
         android:layout_width="match_parent"
@@ -25,7 +27,6 @@
             app:fab_colorPressed="@color/PresionadoFAB"
             app:fab_label="@string/Cerrar"
             app:fab_size="normal" />
-
 
 
         <com.github.clans.fab.FloatingActionButton
@@ -51,7 +52,6 @@
             app:fab_size="normal" />
 
 
-
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/Ajustes"
             android:layout_width="5dp"
@@ -63,6 +63,7 @@
             app:fab_label="@string/Ajustes"
             app:fab_size="normal" />
     </com.github.clans.fab.FloatingActionMenu>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -70,11 +71,12 @@
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:weightSum="4">
+        android:weightSum="8">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="vertical">
 
             <ImageButton
@@ -88,7 +90,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="vertical"
             android:weightSum="2.51">
 
@@ -104,6 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -121,21 +124,22 @@
                     android:layout_height="match_parent"
                     android:fontFamily="cursive"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:textStyle="italic" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.7"
             android:orientation="vertical"
-            android:weightSum="3">
+            android:weightSum="8">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2.1"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -147,12 +151,14 @@
                     android:weightSum="1">
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/TextoCreditos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Créditos"
-                        android:textAlignment="center" />
+                        android:text="@string/Creditos"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -164,17 +170,17 @@
 
                     <TextView
                         android:id="@+id/mi_cuenta_creditos"
-                        android:layout_width="match_parent"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textAlignment="center" />
+                        android:textColor="@color/black" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2.1"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -186,12 +192,13 @@
                     android:weightSum="1">
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/TextoDercargados"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Archivos Descargados"
-                        android:textAlignment="center" />
+                        android:text="@string/Descargados"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -203,17 +210,17 @@
 
                     <TextView
                         android:id="@+id/mi_cuenta_descargados"
-                        android:layout_width="match_parent"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textAlignment="center" />
+                        android:textColor="@color/black" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2.1"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -225,12 +232,13 @@
                     android:weightSum="1">
 
                     <TextView
-                        android:id="@+id/jk"
+                        android:id="@+id/TextoSubidos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Archivos Subidos"
-                        android:textAlignment="center" />
+                        android:text="@string/Subidos"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -242,70 +250,84 @@
 
                     <TextView
                         android:id="@+id/mi_cuenta_subidos"
-                        android:layout_width="match_parent"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textAlignment="center" />
+                        android:textColor="@color/black" />
                 </LinearLayout>
             </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.7"
                 android:orientation="vertical"
                 android:weightSum="3">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:weightSum="1">
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/mi_cuenta_verificacion"
+                        android:id="@+id/TextoRuta"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:textAlignment="center" />
+                        android:gravity="left"
+                        android:text="@string/Ruta"
+                        android:textColor="@color/black" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:weightSum="1">
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:id="@+id/mi_cuenta_ruta"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="left"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:textAppearance="@style/TextAppearance.AppCompat" />
                 </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:weightSum="1">
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.3"
+            android:orientation="vertical"
+            android:weightSum="2">
 
-                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:weightSum="1">
 
+                <TextView
+                    android:id="@+id/mi_cuenta_verificacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

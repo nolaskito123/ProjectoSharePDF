@@ -8,6 +8,31 @@
     <string name="Cuenta">Cuenta</string>
     <string name="Compra">Comprar créditos</string>
     <string name="Cerrar">Cerrar sesión</string>
+    <!-- Activity Login -->
+    <string name="Correo">Correo electrónico</string>
+    <string name="Contra">Contraseña</string>
+    <string name="Ver">Ver contraseña</string>
+    <string name="Registrar">REGISTRAR</string>
+    <string name="Entrar">ENTRAR</string>
+    <string name="Olvido">¿Olvidaste tu contrseña?</string>
+    <!-- Activity Registro -->
+    <string name="Registro">REGISTRO</string>
+    <string name="Usuario">Usuario</string>
+    <string name="Repetir">Repita contraseña</string>
+    <string name="Politicas">He leido y acepto términos y condiciones de uso</string>
+    <string name="Ingresar">REGISTAR E INGRESAR</string>
+    <!-- Activity Cambio Contraseña -->
+    <string name="Pregunta">¿Seguro qué olvidaste contraseña?</string>
+    <string name="Envio">Se enviará un mensaje a tu correo para restablecer para tu contraseña</string>
+    <string name="Introduce">Introduce tu correo aquí</string>
+    <string name="Restablecer">Restablecer contraseña</string>
+    <!-- Activity Mi cuenta -->
+    <string name="Creditos">Créditos</string>
+    <string name="Descargados">Archivos descargados</string>
+    <string name="Subidos">Archivos subidos</string>
+    <string name="Ruta">Ruta para descargas</string>
+    <string name="Verificacion1">Cuenta verificada</string>
+    <string name="Verificacion2">Por favor, verifique cuenta y reinicie sesión</string>
     <!-- Activity Subir/Descargar -->
     <string name="ExaminarPDF">Examinar</string>
     <string name="col1NombrePDF">Nombre de archivo</string>
@@ -19,8 +44,10 @@
     <string name="Descargar">Descargar</string>
     <string name="Fecha">Fecha de subida </string>
     <!-- Activity Ajustes -->
-    <string name="contra">Cambiar contraseña</string>
+    <string name="Acerca">Acerca de nosotros</string>
     <string name="idioma">Cambiar idioma</string>
+    <string name="Escribir">Escríbenos:</string>
+    <string name="Enviar">Enviar</string>
     <!-- Toast -->
     <string name="Toast1">Selecciona archivo</string>
     <string name="Toast2">Pon un nombre</string>
@@ -34,6 +61,26 @@
     <string name="Toast10">Las contraseñas no coinciden</string>
     <string name="Toast11">Usuario no registrado o otro error</string>
     <string name="Toast12">No tienes suficientes créditos</string>
+    <string name="Toast13">Verifica tu correo</string>
+    <string name="Toast14">Autenticación fallida</string>
+    <string name="Toast15">Acepta los términos y condiciones</string>
+    <string name="Toast16">Ingresa un usuario</string>
+    <string name="Toast17">Formato de correo no válido</string>
+    <string name="Toast18">La contraseña debe ser mínimo 6 carácteres y tener una mayúscula, una minúscula y un número</string>
+    <string name="Toast19">Las contraseñas  no coinciden</string>
+    <string name="Toast20">Introduce tu correo</string>
+    <string name="Toast21">Revisa tu correo para restablecer contraseña</string>
+    <string name="Toast22">Fallo al enviar mensaje al correo</string>
+    <string name="Toast23">No exite usuario con el correo:</string>
+    <string name="Toast24">La contraseña no es válida para:</string>
+    <string name="Toast25">A ocurrido un error inesperado</string>
+    <string name="Toast26">Contraseña no válida</string>
+    <string name="Toast27">Correo no válido</string>
+    <string name="Toast28">Debes verificar tu cuenta para descargar</string>
+    <string name="Toast29">Imagen borrada con éxito</string>
+    <string name="Toast30">Fallo al borrar imagen</string>
+    <string name="Toast31">Foto actualizada</string>
+    <string name="Toast32">Error al actualizar foto</string>
     <!--ProgressDialog/AlertDialog-->
     <string name="Texto1">Selecciona archivo</string>
     <string name="Texto2">Subiendo archivo</string>

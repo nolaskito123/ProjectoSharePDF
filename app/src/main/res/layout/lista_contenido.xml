@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/archivo_nombre"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/archivo_categoria"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/archivo_val"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/black" />
 </LinearLayout>

@@ -68,7 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="@color/black"
-                android:hint="Correo electrónico">
+                android:hint="@string/Correo">
 
                 <EditText
                     android:id="@+id/login_correo"
@@ -88,7 +88,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorPrimary"
                 android:foregroundTint="@color/black"
-                android:hint="Contraseña"
+                android:hint="@string/Contra"
                 app2:passwordToggleTint="@color/black">
 
                 <EditText
@@ -125,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/black"
-                android:text="Ver contraseña"
+                android:text="@string/Ver"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -148,8 +148,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:backgroundTint="#FFCA28"
-                    android:text="REGISTRAR"
+                    android:backgroundTint="@color/FondoFAB"
+                    android:text="@string/Registrar"
                     android:textColor="@color/black" />
             </LinearLayout>
 
@@ -166,8 +166,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:backgroundTint="#FFCA28"
-                    android:text="ENTRAR"
+                    android:backgroundTint="@color/FondoFAB"
+                    android:text="@string/Entrar"
                     android:textColor="@color/black" />
             </LinearLayout>
         </LinearLayout>
@@ -186,8 +186,7 @@
                 android:layout_weight="1"
                 android:allowUndo="true"
                 android:background="@android:color/transparent"
-                android:text="¿Olvidaste tu contrseña?"
-                android:textAlignment="viewStart"
+                android:text="@string/Olvido"
                 android:textColor="@color/black"
                 android:textSize="10sp"
                 android:visibility="visible" />

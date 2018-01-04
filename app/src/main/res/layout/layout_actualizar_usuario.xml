@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:background="@android:color/darker_gray"
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="SharePDF"
         android:textSize="24sp" />
 
@@ -22,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="10dp"
-        android:text="¿Seguro qué olvidaste contraseña?"
+        android:textColor="@color/black"
+        android:text="@string/Pregunta"
         android:textSize="20dp" />
 
     <TextView
@@ -31,7 +34,8 @@
         android:layout_marginBottom="10dp"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:text="Se enviará un mensaje a tu correo para restablecer para tu contraseña"
+        android:textColor="@color/black"
+        android:text="@string/Envio"
         android:textSize="14dp" />
 
     <EditText
@@ -40,7 +44,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Introduce tu correo aquí"
+        android:foregroundTint="@color/black"
+        android:textColor="@color/black"
+        android:hint="@string/Introduce"
         android:inputType="textEmailAddress" />
 
     <Button
@@ -48,15 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="restablecer contraseña" />
-
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@null"
-        android:text="ATRÁS"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:textColor="@color/black"
+        android:backgroundTint="@color/FondoFAB"
+        android:text="@string/Restablecer" />
 
 </LinearLayout>

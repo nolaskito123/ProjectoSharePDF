@@ -14,17 +14,24 @@ import com.example.alex.sharepdf.R;
 import java.util.List;
 
 /**
- * Created by Alex on 07/12/2017.
+ * Created by SharePDF developers
+ *
+ * Clase ListaPDF, es una clase para imprimir por pantalla toda la lista de archivos disponible para descargar.
  */
 
-public class ListaPDF  extends ArrayAdapter<PDF>{
+public class ListaPDF extends ArrayAdapter<PDF> {
 
     private Activity context;
     private List<PDF> listaPDF;
 
-    public ListaPDF(Activity context, List<PDF> listaPDF){
-        super(context,R.layout.lista_contenido,listaPDF);
-        this.context=context;
+    /**
+     * Constructor de la clase ListaPDF, recibe 2 parámetros
+     * @param context Contexto del activity donde se imprimirá las lista de archivos.
+     * @param listaPDF Lista de archivos PDF para imprimir por pantalla.
+     */
+    public ListaPDF(Activity context, List<PDF> listaPDF) {
+        super(context, R.layout.lista_contenido, listaPDF);
+        this.context = context;
         this.listaPDF = listaPDF;
     }
 
@@ -42,7 +49,7 @@ public class ListaPDF  extends ArrayAdapter<PDF>{
 
         archivo_nombre.setText(pdf.getTitulo());
         archivo_categoria.setText(pdf.getCategoria());
-        archivo_val.setText(""+pdf.getPuntuacion());
+        archivo_val.setText("" + pdf.getPuntuacion());
 
         return listViewItem;
 

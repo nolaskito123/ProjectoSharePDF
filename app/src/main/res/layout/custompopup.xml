@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="475dp"
+    android:background="@android:color/darker_gray"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/txtclose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:text=" m,,,"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aviso legal y condiciones generales de uso El Aviso Legal y las Condiciones Generales de Uso, o términos y condiciones de uso, está pensado para todos aquellos que van a crear una página o sitio web.  Este documento contiene, de forma general, un conjunto de menciones o referencias legales que servirán para regular las condiciones en las que los usuarios de Internet acceden, navegan y utilizan el sitio o página web. También comprende los derechos, obligaciones y responsabilidades a los que las partes quedan sometidas recíprocamente durante el acceso, navegación y uso del sitio web.  La inclusión de un aviso legal y condiciones generales de uso aporta un gran nivel de confianza y seguridad jurídica por lo que es recomendable para todos y cada uno de los sitios web presentes en Internet.  También existe otro conjunto de menciones legales —condiciones generales de venta— que, a veces, se presentan de forma conjunta con el aviso legal y las condiciones generales de uso, pero no deben confundirse el uno con el otro, pues su contenido difiere.   ¿Cómo utilizar este documento?  La primera parte del documento es fundamental, ya que recoge los elementos identificativos del titular, que la Ley —artículo 10 LSSI-CE— exige que sean accesibles forma permanente, fácil, directa y gratuita para todos los Usuarios. Entre ellos se encuentran los datos de contacto del titular (la dirección, y el correo electrónico son especialmente importantes) y, en caso de tratarse de una persona jurídica, el NIF (antiguamente conocido con CIF) y los datos registrales del Registro donde se encuentre inscrita. Por tanto, antes de empezar es importante verificar estas informaciones.  Además, se ha de tener en cuenta que si el contenido, información o servicio sobre el que versa el sitio web se refiere a una actividad del titular y ésta requiere autorización administrativa previa o está regulada, también deberá proveer información complementaria relativa a la misma.  Más allá de este contenido de obligatorio cumplimiento, el resto se irá adaptando en función de sus necesidades y las características del sitio web.  En caso de recabar datos o información de los Usuarios, recuerde que es obligatorio, antes mismo de la creación del fichero, comunicarlo e inscribirlo en el Registro de la Agencia Española de Protección de Datos —artículo 26 LOPD— , y así se reflejará en este documento.  Asimismo, se considera que el Usuario acepta el presente aviso legal y las condiciones generales de uso a través del acceso, navegación y uso del Sitio Web.  Teniendo en cuenta esto último y, especialmente, en aquellos casos en los que exista la tecnología de cookies, prevea un método que llame la atención del Usuario inmediatamente al acceder al Sitio Web, por ejemplo, con una ventana emergente nada más acceder y que da la opción de aceptar y/o consultar el aviso legal y las condiciones generales de uso (cookies, política de privacidad, etc.).  Derecho aplicable  Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (LOPD), y Real Decreto 1720/2007, de 21 de diciembre, por el que se aprueba el Reglamento de desarrollo de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal." />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

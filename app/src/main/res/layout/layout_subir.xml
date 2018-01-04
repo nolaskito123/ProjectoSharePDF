@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context="principal.Subir">
 
     <com.github.clans.fab.FloatingActionMenu
@@ -39,7 +40,6 @@
             app:fab_size="normal" />
 
 
-
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/Ajustes"
             android:layout_width="5dp"
@@ -51,6 +51,7 @@
             app:fab_label="@string/Ajustes"
             app:fab_size="normal" />
     </com.github.clans.fab.FloatingActionMenu>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,18 +64,21 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:weightSum="5">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.6"
                 android:weightSum="5">
+
                 <Button
                     android:id="@+id/BotonEscoger"
                     android:layout_width="20mm"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/FondoFAB"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/ExaminarPDF" />
+                    android:backgroundTint="@color/FondoFAB"
+                    android:text="@string/ExaminarPDF"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -82,19 +86,22 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.8"
                 android:weightSum="5"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.6"
                 android:weightSum="5">
+
                 <Button
                     android:id="@+id/BotonSubir"
                     android:layout_width="15mm"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/FondoFAB"
                     android:layout_gravity="right"
                     android:layout_marginLeft="25dp"
-                    android:text="@string/Subir" />
+                    android:backgroundTint="@color/FondoFAB"
+                    android:text="@string/Subir"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
         </LinearLayout>
@@ -115,68 +122,76 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="4"
-                    android:layout_weight="0.25">
+                    android:layout_weight="0.25"
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/NombreArchivo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:weightSum="4"
                         android:layout_weight="0.25"
-                        android:text="@string/col1NombrePDF" />
+                        android:text="@string/col1NombrePDF"
+                        android:textColor="@color/black"
+                        android:weightSum="4" />
 
                     <EditText
                         android:id="@+id/pdf"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:ems="10"
+                        android:hint="@string/col2NombrePDF"
                         android:inputType="text"
-                        android:hint="@string/col2NombrePDF"/>
+                        android:textColor="@color/black" />
 
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="4"
-                    android:layout_weight="0.25">
+                    android:layout_weight="0.25"
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/Categoria"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:weightSum="4"
                         android:layout_weight="0.25"
-                        android:text="@string/Categoria" />
+                        android:text="@string/Categoria"
+                        android:textColor="@color/black"
+                        android:weightSum="4" />
 
                     <Spinner
                         android:id="@+id/EscogerCategoria"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"/>
+                        android:background="@color/FondoFAB"
+                        android:layout_marginLeft="15dp" />
 
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:weightSum="4"
-                    android:layout_weight="3.5">
+                    android:layout_weight="3.5"
+                    android:weightSum="4">
 
                     <TextView
                         android:id="@+id/Descripcion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:weightSum="4"
                         android:layout_weight="0.25"
-                        android:text="@string/col1Descripcion" />
+                        android:text="@string/col1Descripcion"
+                        android:textColor="@color/black"
+                        android:weightSum="4" />
 
                     <EditText
                         android:id="@+id/CampoDescripcion"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:hint="@string/col2Descripcion"/>
+                        android:ems="8"
+                        android:hint="@string/col2Descripcion"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/black" />
 
                 </TableRow>
             </TableLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context="principal.Ajustes">
 
     <RelativeLayout
@@ -11,23 +12,54 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/cambiar_pass"
+        <TextView
+            android:id="@+id/Escribir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="150dp"
-            android:backgroundTint="@color/FondoFAB"
-            android:text="@string/contra" />
+            android:layout_marginTop="210dp"
+            android:textColor="@color/black"
+            android:text="@string/Escribir" />
 
         <Button
             android:id="@+id/cambiar_idioma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="70dp"
+            android:textColor="@color/black"
             android:backgroundTint="@color/FondoFAB"
             android:text="@string/idioma" />
+
+        <Button
+            android:id="@+id/acerca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="140dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/FondoFAB"
+            android:text="@string/Acerca" />
+
+        <EditText
+            android:id="@+id/TextoEnviar"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="250dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:foregroundTint="@color/black"/>
+
+        <Button
+            android:id="@+id/enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="350dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/FondoFAB"
+            android:text="@string/Enviar" />
+
+
     </RelativeLayout>
 
     <com.github.clans.fab.FloatingActionMenu

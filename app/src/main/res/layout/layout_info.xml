@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/CampoNombre"
@@ -10,7 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="38dp"
-        android:text="@string/col1NombrePDF" />
+        android:text="@string/col1NombrePDF"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/CampoCategoria"
@@ -20,7 +23,8 @@
         android:layout_alignStart="@+id/CampoNombre"
         android:layout_below="@+id/CampoNombre"
         android:layout_marginTop="40dp"
-        android:text="@string/Categoria" />
+        android:text="@string/Categoria"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/CampoFecha"
@@ -30,7 +34,8 @@
         android:layout_alignStart="@+id/CampoCategoria"
         android:layout_below="@+id/CampoCategoria"
         android:layout_marginTop="40dp"
-        android:text="@string/Fecha" />
+        android:text="@string/Fecha"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/CampoPuntuacion"
@@ -40,7 +45,8 @@
         android:layout_alignStart="@+id/CampoFecha"
         android:layout_below="@+id/CampoFecha"
         android:layout_marginTop="40dp"
-        android:text="@string/Puntuacion" />
+        android:text="@string/Puntuacion"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/CampoDescripcion"
@@ -50,7 +56,8 @@
         android:layout_alignStart="@+id/CampoPuntuacion"
         android:layout_below="@+id/CampoPuntuacion"
         android:layout_marginTop="40dp"
-        android:text="@string/col1Descripcion" />
+        android:text="@string/col1Descripcion"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/PonerNombre"
@@ -61,7 +68,8 @@
         android:layout_marginStart="45dp"
         android:layout_toEndOf="@+id/CampoNombre"
         android:layout_toRightOf="@+id/CampoNombre"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/PonerCategoria"
@@ -70,7 +78,8 @@
         android:layout_alignLeft="@+id/PonerNombre"
         android:layout_alignStart="@+id/PonerNombre"
         android:layout_alignTop="@+id/CampoCategoria"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/PonerFecha"
@@ -79,7 +88,8 @@
         android:layout_alignLeft="@+id/PonerCategoria"
         android:layout_alignStart="@+id/PonerCategoria"
         android:layout_alignTop="@+id/CampoFecha"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/PonerPuntuacion"
@@ -88,27 +98,30 @@
         android:layout_alignLeft="@+id/PonerFecha"
         android:layout_alignStart="@+id/PonerFecha"
         android:layout_alignTop="@+id/CampoPuntuacion"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/PonerDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:singleLine="false"
-        android:maxLines="10"
         android:layout_alignLeft="@+id/PonerPuntuacion"
         android:layout_alignStart="@+id/PonerPuntuacion"
         android:layout_alignTop="@+id/CampoDescripcion"
-        android:text="TextView" />
+        android:maxLines="10"
+        android:singleLine="false"
+        android:text="TextView"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/Descargar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/FondoFAB"
         android:layout_alignLeft="@+id/CampoDescripcion"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/CampoDescripcion"
         android:layout_marginBottom="104dp"
-        android:text="@string/Descargar"/>
+        android:backgroundTint="@color/FondoFAB"
+        android:text="@string/Descargar"
+        android:textColor="@color/black" />
 </RelativeLayout>

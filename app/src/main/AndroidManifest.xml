@@ -55,7 +55,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="principal.ResetPasswordActivity">
+        <activity android:name="auth.ResetPasswordActivity">
             <intent-filter>
                 <action android:name="android.intent.action.ResetPasswordActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
