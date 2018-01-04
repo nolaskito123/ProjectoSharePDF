@@ -175,6 +175,7 @@ MediaPlayer mp;
         FirebaseAuth.getInstance().signOut();
         Intent login = new Intent(this, Login.class);
         startActivity(login);
+        finish();
     }
 
     /**
@@ -203,6 +204,7 @@ MediaPlayer mp;
         mp.start();
         Intent i = new Intent(this, Ajustes.class);
         startActivity(i);
+        finish();
     }
 
 

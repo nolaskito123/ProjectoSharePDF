@@ -137,7 +137,7 @@ public class Subir extends AppCompatActivity implements View.OnClickListener {
         mp.start();
         super.onBackPressed();
         Intent i = new Intent(Subir.this, MiCuenta.class);
-        startActivity(i);
+        onNewIntent(i);
         this.finish();
     }
     /**
@@ -209,7 +209,7 @@ public class Subir extends AppCompatActivity implements View.OnClickListener {
     public void ClickMiCuenta(View view) {
         mp.start();
         Intent i = new Intent(this, MiCuenta.class);
-        startActivity(i);
+        onNewIntent(i);
         finish();
     }
 

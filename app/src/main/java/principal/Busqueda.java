@@ -76,7 +76,7 @@ public class Busqueda extends AppCompatActivity {
         mp.start();
         super.onBackPressed();
         Intent i = new Intent(Busqueda.this, MiCuenta.class);
-        startActivity(i);
+        onNewIntent(i);
         this.finish();
     }
     @Override
@@ -204,7 +204,7 @@ public class Busqueda extends AppCompatActivity {
     public void ClickMiCuenta(View view) {
         mp.start();
         Intent i = new Intent(this, MiCuenta.class);
-        startActivity(i);
+        onNewIntent(i);
         finish();
     }
     /**
